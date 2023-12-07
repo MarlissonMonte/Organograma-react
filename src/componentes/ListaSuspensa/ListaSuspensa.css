@@ -1,0 +1,14 @@
+.lista-suspernsa{
+    display: flex;
+    justify-content: center;
+    margin: 80px 0;
+
+}
+
+.lista-suspensa select{
+    max-width: 100%;
+    background: #beb8b8;
+    border-radius: 80px 80px;
+    padding: 16px 64px;
+    box-shadow: 8px 8px 16px rgba(1, 6, 10, 0.8);
+}
