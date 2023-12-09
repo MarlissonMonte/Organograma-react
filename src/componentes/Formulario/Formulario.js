@@ -10,6 +10,7 @@ const Formulario = () => {
     'Donkey Kong Country I',
     'Donkey Kong Country II',
     'Donkey Kong Country III',
+    'Super Mario world',
     'Super Bomberman',
     'Super Mario Kart',
     'The Legend of Zelda',
@@ -22,17 +23,22 @@ const Formulario = () => {
     'Final Fantasy IV',
     'Susetrider']
 
+    const aoSalvar = (evento) => {
+        evento.preventDefault()
+        console.log("Form submetido!")
+    }
+
     return (
         <section className="Formulario">
-            <form>
+            <form onSubmit={aoSalvar}>
                 <h2>
                     Preencha o formulario abaixo para criar o card
                 </h2>
-                <CampoTexto label="Nome " placeholder="Digite o nome do personagem" />
-                <CampoTexto label="Descrição " placeholder="Digite a descrição do personagem" />
+                <CampoTexto obrigatorio={true} label="Nome " placeholder="Digite o nome do personagem" />
+                <CampoTexto obrigatorio={true} label="Descrição " placeholder="Digite a descrição do personagem" />
                 <CampoTexto label="Imagem " placeholder="Insira o endereço da imagem" />
                 <section className="caixinha"> 
-                    <ListaSuspensa label="Jogo  " itens={jogos} />
+                    <ListaSuspensa obrigatorio={true} label="Jogo  " itens={jogos} />
                 </section>
                 <Botao>
                     Criar card
