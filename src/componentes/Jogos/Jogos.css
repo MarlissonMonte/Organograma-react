@@ -1,0 +1,11 @@
+.Jogos{
+    text-align: center;
+    padding: 32px;
+}
+
+.Jogos h3{
+    font-size: 32px;
+    border-bottom: 4px solid #57c278;
+    display: inline-block;
+    padding-bottom: 8px;
+}
