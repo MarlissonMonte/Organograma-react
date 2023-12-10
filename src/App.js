@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import Banner from './componentes/Banner/Banner';
 import Formulario from './componentes/Formulario/Formulario';
-import Jogos from './componentes/Jogos/Jogos';
+import Time from './componentes/Time/Time';
 
 function App() {
 
-  const jogos = [{
+  const times = [{
     nome: 'Aladdin',
     corPrimaria: '#1645b9',
     corSecundaria: '#091e54'
@@ -86,19 +86,24 @@ function App() {
     corSecundaria: '#402c14'
   }]
 
+  const [colaboradores, setColaboradores] = useState([])
 
-  const [personagem, setPersonagem] = useState ([])
-
-  const aoNovoPersonagemAdicionado = (personagem) =>{
-    console.log(personagem)
+  const aoNovoColaboradorAdicionado = (colaborador) => {
+    setColaboradores([...colaboradores, colaborador])
   }
 
   return (
     <div className="App">
       <Banner />
-      <Formulario aoPersonagemAdicionado={aoNovoPersonagemAdicionado}/>
+      <Formulario times={times.map(time => time.nome)} aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)}/>
 
-      {jogos.map(jogo => <Jogos key={jogo.nome} nome={jogo.nome} corPrimaria={jogo.corPrimaria} corSecundaria={jogo.corSecundaria} />)}
+      {times.map(time => <Time 
+        key={time.nome} 
+        nome={time.nome} 
+        corPrimaria={time.corPrimaria} 
+        corSecundaria={time.corSecundaria} 
+        colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
+      />)}   
 
     </div>
   );

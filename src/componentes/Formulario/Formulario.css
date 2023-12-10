@@ -1,11 +1,11 @@
-.Formulario{
+.formulario{
     display: flex;
     justify-content: center;
     margin: 90px 0;
 
 }
 
-.Formulario form{
+.formulario form{
     max-width: 100%;
     background: #beb8b8;
     border-radius: 80px 80px;
